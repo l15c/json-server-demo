@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:1506/api
+
+@resourceName=products
+# Students
+
+# @name getAllProducts
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?price_gte=500
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color_like=lave
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+
+###
+
+# @name addNewProduct
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name": "New Laptop"
+}
+
+###
+
+# @name updateProduct
+PATCH {{baseUrl}}/{{resourceName}}/:id
+Content-Type: application/json
+
+{
+    "name": "Update Laptop ID 3"
+}
+
+###
+
+# @name removeProduct
+DELETE {{baseUrl}}/{{resourceName}}/2

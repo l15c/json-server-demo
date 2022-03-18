@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:1506/api
+
+# Students
+
+# @name getAllCategories
+GET {{baseUrl}}/categories
+
+###
+
+# @name addNewCategory
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+    "name": "New Laptop"
+}
+
+###
+
+# @name updateCategory
+PATCH {{baseUrl}}/categories/:id
+Content-Type: application/json
+
+{
+    "name": "Update Laptop ID 3"
+}
+
+###
+
+# @name removeCategory
+DELETE {{baseUrl}}/categories/2
